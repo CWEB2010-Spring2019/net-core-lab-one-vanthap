@@ -9,6 +9,7 @@ namespace lab_one
             Console.WriteLine("Hello World!");
             Console.Writeline("Test commit");
             Console.Writeline("Test commit 2");
+            Console.Writeline("Test commit to test_commit branch");
         }
     }
 }
