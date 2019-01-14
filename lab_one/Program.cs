@@ -8,6 +8,7 @@ namespace lab_one
         {
             Console.WriteLine("Hello World!");
             Console.Writeline("Test commit");
+            Console.Writeline("Test commit 2");
         }
     }
 }
