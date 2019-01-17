@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using static System.Console;
 
 namespace Lab_1
 {
@@ -8,28 +9,27 @@ namespace Lab_1
         static void Main(string[] args)
         {
             //Declaring an array that holds correctAnswers
-            correctAnswers = new string[5] { "B", "B", "C", "A", "D" };
+            string[] correctAnswers = new string[5] { "B", "B", "C", "A", "D" };
 
             //An array for end-users selection
-            userSelection = new string[5];
+            string[] userSelection = new string[5];
 
             //Declare an array that holds the questions
-            quizQuestions = new string[5] { "Is .NET core open-source?", "Does .NET core support cross-platform scenarios?", "When was .NET core released?", "What is the current version of .NET core?", "How many cross-platform scenarios can .NET core support?" };
+            string[] quizQuestions = new string[5] { "Is .NET core open-source?", "Does .NET core support cross-platform scenarios?", "When was .NET core released?", "What is the current version of .NET core?", "How many cross-platform scenarios can .NET core support?" };
 
             //Declare a Multi-dimensional array that holds options for each questions
-            quizQuestionOptions = new string[,]  {
+            string[,] quizQuestionOptions =  {
                 {"A) .NET core is not public yet", "B) Yes", "C) I don't know", "D) No"},
                 {"A) Need permission from Microsoft for cross-platform", "B) Yes", "C) No", "D) In current development"},
                 {"A) 2019", "B) 2003", "C) 2016", "D) 1990"},
                 {"A) 2.2", "B) 1.5", "C) 0.7", "D) 6.4"},
-                {"A) 2", "B) 1", "C) 0", "D) 4"},
+                {"A) 2", "B) 1", "C) 0", "D) 4"}
                 
             };
 
             string selection;
-            string num = start;
-
-            string num = EXIT[-1];     //Sentinel Value
+            int start;
+            int EXIT;     //Sentinel Value
 
             List<string> correct = new List<string>();
             List<string> wrong = new List<string>();
@@ -78,7 +78,7 @@ namespace Lab_1
 
 
             Console.WriteLine("To take the quiz again, enter any value other than -1. To exit enter -1");
-            start = Readline();
+            start = ReadLine();
 
             //ENDWHILE
 
