@@ -31,12 +31,51 @@ namespace Lab_1
             };
 
             string selection;
-            num start
-            num EXIT = -1
+            string num = start;
+
+            string num = EXIT [-1];     //Sentinel Value
+
+            List<string> correct = new List<string>();
+            List<string> wrong = new List<string>();
+
+            Console.WriteLine("Welcome, this program will assess your knowledge of .NET core");
+            Console.WriteLine("To get started, please enter a number other than -1 to start the program");
+            userInput = Console.ReadLine();
+            int x = Int32.Parse(Console.ReadLine());
+
+            while (start() != EXIT());
+
+
+            for (num x = 0; x < quizQuestions.Length; x++) {
+
+                Console.WriteLine(quizQuestions[10]);
+                for (num i = 0; i < quizQuestionOptions.GetLength(0); i++) {
+                    Console.WriteLine(quizQuestionOptions[x, i])
+                    };
+
+                Console.WriteLine("Please enter an option");
+                userInput = selection();
+                userSelection[x] = selection;
+
+                //Need to determind if the user's selection is the correct answer
+                if (selection == correctAnswers[x]) { 
+                    correct.Add(selection) };
+			    else
+				    wrong.Add(selection);
+			   
+			
+			    string wrong.Clear;
+			    string correct.Clear;
 
 
 
 
+
+
+
+
+
+                };
 
 
 
