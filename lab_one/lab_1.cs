@@ -4,12 +4,14 @@ using static System.Console;
 
 namespace Lab_1
 {
+    //This program is a quiz application to asses the knowledge of .NET core
+
     class program
     {
         static void Main(string[] args)
         {
-            //Declaring an array that holds correctAnswers
-            string[] correctAnswers = new string[5] { "B", "B", "C", "A", "D" };
+            //Array to hold the correct answers. Answer key: B, B, C, A, D, A, A, C, D, A
+            string[] correctAnswers = new string[10] { "B", "B", "C", "A", "D", "A", "A", "C", "D", "A" };
 
             //An array for end-users selection
             string[] userSelection = new string[5];
