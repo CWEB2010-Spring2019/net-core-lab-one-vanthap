@@ -58,11 +58,11 @@ namespace Lab_1
             //START While
             while (start != EXIT)
             {
-                for (num x = 0; x < quizQuestions.Length; x++)
+                for (int x = 0; x < quizQuestions.Length; x++)
                 {
 
                     Console.WriteLine(quizQuestions[10]);
-                    for (num i = 0; i < quizQuestionOptions.GetLength(0); i++)
+                    for (int i = 0; i < quizQuestionOptions.GetLength(0); i++)
                     {
                         Console.WriteLine(quizQuestionOptions[x, i]);
                     }
@@ -78,8 +78,8 @@ namespace Lab_1
                     else
                         wrong.Add("Question: " + (x + 1) + selection);
 
-                    wrong.Clear;
-                    correct.Clear;
+                    wrong.Clear();
+                    correct.Clear();
                 }
             }
             //END While
@@ -95,9 +95,21 @@ namespace Lab_1
             wrong.ForEach(x => { Console.WriteLine(x); });
 
             Console.WriteLine("To take the quiz again, enter any value other than -1. To exit enter -1");
-            start = ReadLine();
+            string startAsString = ReadLine();
+            start = Convert.ToInt32(startAsString);
 
             Console.WriteLine("Program has concluded");
+        }
+
+        static int greetings()
+        {
+            int start;
+            Console.WriteLine("Welcome, this program will assess your knowledge of .NET core.");
+            Console.WriteLine("To get started, please enter a number other than -1");
+            string startAsString = ReadLine();
+            start = Convert.ToInt32(startAsString);
+
+            return start;
         }
 
     }
