@@ -62,7 +62,7 @@ namespace Lab_1
                 {
 
                     Console.WriteLine(quizQuestions[10]);
-                    for (int i = 0; i < quizQuestionOptions.GetLength(0); i++)
+                    for (int i = 0; i < quizQuestionOptions.GetLength(1); i++)
                     {
                         Console.WriteLine(quizQuestionOptions[x, i]);
                     }
