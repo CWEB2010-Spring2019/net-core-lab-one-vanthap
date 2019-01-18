@@ -13,7 +13,7 @@ namespace Lab_1
             //Array to hold the correct answers. Answer key: B, B, C, A, D, A, A, C, D, A
             string[] correctAnswers = new string[10] { "B", "B", "C", "A", "D", "A", "A", "C", "D", "A" };
 
-            //Array to hold user's input and selection choice
+            //Array to hold users input and selection choice
             string[] userSelection = new string[10];
 
             //Array to hold the question for the quiz
