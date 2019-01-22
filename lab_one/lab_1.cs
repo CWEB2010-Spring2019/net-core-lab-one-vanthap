@@ -40,9 +40,9 @@ namespace Lab_1
                 {"A) 2", "B) 1", "C) 0", "D) 4"},
                 {"A) .NET Foundation", "B) Microsoft", "C) John Rollocks", "D) Apple"},
                 {"A) Python", "B) C#", "C) F#", "D) Visual Basic"},
-                {"A)C# ", "B) F#", "CC) Both A & D", "D) C++"},
+                {"A)C# ", "B) F#", "C) Both A & D", "D) C++"},
                 {"A) Mono", "B) .NET Framwork", "C) Xamarin", "D) All of the above"},
-                {"AA) All of the below", "B) Windows", "C) Linux", "D) macOS"}
+                {"A) All of the below", "B) Windows", "C) Linux", "D) macOS"}
             };
 
             string selection;
@@ -69,6 +69,8 @@ namespace Lab_1
 
                     Console.WriteLine("Please enter and option: ");
                     selection = ReadLine().ToUpper();
+
+                    
                     userSelection[x] = selection;
 
                     //Need to determing if the user's selectio is the correct answer
@@ -80,7 +82,8 @@ namespace Lab_1
                 Console.WriteLine("You answered " + correct.Count + " out of " + quizQuestions.Length);
 
                 // Determing if they passed
-                var results = (correct.Count >= 1) ? "You passes the assessment " : " You didnt pass ";
+                var results = (correct.Count >= 8) ? "You passed the assessment" : "You didnt pass the assessment";
+                Console.WriteLine(results);
 
                 //Output the wrong questions
                 if (wrong.Count > 0)
