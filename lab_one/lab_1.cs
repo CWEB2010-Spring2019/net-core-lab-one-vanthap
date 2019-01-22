@@ -23,11 +23,11 @@ namespace Lab_1
                 "When was .NET core released?",
                 "What is the current version of .NET core?",
                 "How many cross-platform scenarios can .NET core support?",
-                "",
-                "",
-                "",
-                "",
-                ""
+                "test",
+                "test",
+                "test",
+                "test",
+                "test"
             };
 
             //Multi-dimensional array that holds options for each questions
@@ -60,8 +60,7 @@ namespace Lab_1
             {
                 for (int x = 0; x < quizQuestions.Length; x++)
                 {
-
-                    Console.WriteLine(quizQuestions[10]);
+                    Console.WriteLine(quizQuestions[x]);
                     for (int i = 0; i < quizQuestionOptions.GetLength(1); i++)
                     {
                         Console.WriteLine(quizQuestionOptions[x, i]);
@@ -77,9 +76,6 @@ namespace Lab_1
 
                     else
                         wrong.Add("Question: " + (x + 1) + selection);
-
-                    wrong.Clear();
-                    correct.Clear();
                 }
             }
             //END While
@@ -93,6 +89,11 @@ namespace Lab_1
             //Output the questions they got wrong
             Console.WriteLine("Listed below are the questions you got wrong");
             wrong.ForEach(x => { Console.WriteLine(x); });
+
+            //Clear both list
+            wrong.Clear();
+            correct.Clear();
+
 
             Console.WriteLine("To take the quiz again, enter any value other than -1. To exit enter -1");
             string startAsString = ReadLine();
