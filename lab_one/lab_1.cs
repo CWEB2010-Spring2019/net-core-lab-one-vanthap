@@ -15,6 +15,7 @@ namespace Lab_1
 
             //Array to hold users input and selection choice
             string[] userSelection = new string[10];
+            
 
             //Array to hold the question for the quiz
             string[] quizQuestions = new string[10] {
@@ -23,11 +24,11 @@ namespace Lab_1
                 "When was .NET core released?",
                 "What is the current version of .NET core?",
                 "How many cross-platform scenarios can .NET core support?",
-                "test",
-                "test",
-                "test",
-                "test",
-                "test"
+                ".NET core was develope by:",
+                "Which language is not supported by .NET core?",
+                "Which language(s) was used to build .NET core?",
+                ".NET core compatiable with:",
+                "Which operating system is supported by .NET core?"
             };
 
             //Multi-dimensional array that holds options for each questions
@@ -37,11 +38,11 @@ namespace Lab_1
                 {"A) 2019", "B) 2003", "C) 2016", "D) 1990"},
                 {"A) 2.2", "B) 1.5", "C) 0.7", "D) 6.4"},
                 {"A) 2", "B) 1", "C) 0", "D) 4"},
-                {"AA) ", "B) ", "C) ", "D) "},
-                {"AA) ", "B) ", "C) ", "D) "},
-                {"A) ", "B) ", "CC) ", "D) "},
-                {"A) ", "B) ", "C) ", "DD) "},
-                {"AA) ", "B) ", "C) ", "D) "}
+                {"A) .NET Foundation", "B) Microsoft", "C) John Rollocks", "D) Apple"},
+                {"A) Python", "B) C#", "C) F#", "D) Visual Basic"},
+                {"A)C# ", "B) F#", "CC) Both A & D", "D) C++"},
+                {"A) Mono", "B) .NET Framwork", "C) Xamarin", "D) All of the above"},
+                {"AA) All of the below", "B) Windows", "C) Linux", "D) macOS"}
             };
 
             string selection;
@@ -66,38 +67,37 @@ namespace Lab_1
                         Console.WriteLine(quizQuestionOptions[x, i]);
                     }
 
-                    Console.WriteLine("Please enter an option:");
-                    selection = ReadLine();
+                    Console.WriteLine("Please enter and option: ");
+                    selection = ReadLine().ToUpper();
                     userSelection[x] = selection;
 
-                    //If statement to determind if the selection was correct or wrong
+                    //Need to determing if the user's selectio is the correct answer
                     if (selection == correctAnswers[x])
                         correct.Add(selection);
-
                     else
-                        wrong.Add("Question: " + (x + 1) + selection);
+                        wrong.Add("Question: " + (x + 1) + ") " + selection);
                 }
+                Console.WriteLine("You answered " + correct.Count + " out of " + quizQuestions.Length);
+
+                // Determing if they passed
+                var results = (correct.Count >= 1) ? "You passes the assessment " : " You didnt pass ";
+
+                //Output the wrong questions
+                if (wrong.Count > 0)
+                    Console.WriteLine("Listed below are the questions you got wrong.");
+                wrong.ForEach(x => { Console.WriteLine(x); });
+
+                //Clear both list
+                wrong.Clear();
+                correct.Clear();
+
+
+                Console.WriteLine("To take the quiz again, enter any value other than -1. To exit enter -1.");
+                string startAsString = ReadLine();
+                start = Convert.ToInt32(startAsString);
             }
+
             //END While
-
-            //Output their score out of 10
-            Console.WriteLine("You answered " + correct.Count + " out of " + quizQuestionOptions.Length);
-
-            //Determind if they passed
-            var results = (correct.Count >= 1) ? "You passed the assesment" : "You didn't pass";
-
-            //Output the questions they got wrong
-            Console.WriteLine("Listed below are the questions you got wrong");
-            wrong.ForEach(x => { Console.WriteLine(x); });
-
-            //Clear both list
-            wrong.Clear();
-            correct.Clear();
-
-
-            Console.WriteLine("To take the quiz again, enter any value other than -1. To exit enter -1");
-            string startAsString = ReadLine();
-            start = Convert.ToInt32(startAsString);
 
             Console.WriteLine("Program has concluded");
         }
